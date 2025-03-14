@@ -1,0 +1,22 @@
+
+org 100h 
+.model small
+.stack 100h
+.data 
+.code
+main proc
+MOV CL,0
+MOV BL,10
+L1:
+mov dl,cl
+add dl,48
+mov ah,2
+int 21h
+inc CL
+CMP CL,BL
+JNZ L1
+
+ret
+
+end mainp
+main end
